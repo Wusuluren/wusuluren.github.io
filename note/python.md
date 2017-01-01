@@ -1,6 +1,3 @@
-	a = 10
-	b = a + 10
-
 ## 数据类型
 - 整数
     - 没有大小限制
@@ -34,7 +31,7 @@
     - 计算str包含多少字符，使用len()函数
     - 为避免乱码，应坚持使用UTF-8编码对str和bytes进行转换
     - python源码开头格式如下
-```
+```python
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 ```
@@ -62,7 +59,7 @@
 ## 条件判断
 - if语句
     - 范例
-```
+```python
 if <条件判断1>:
     <执行1>
 elif <条件判断2>:
@@ -74,7 +71,7 @@ else:
 ## 循环
 - for...in循环
     - 范例
-```
+```python
 for x in list(rang(5)):
     print x
 ```
@@ -89,7 +86,7 @@ while True:
 - dict
     - 也称map，使用键-值（key-value）存储，具有极快的查找速度。
     - 举例
-```
+```python
 d = ['Michael':95, 'Bob':75, 'Tracy':85]
 d['Michael']
 95
@@ -110,7 +107,7 @@ d.pop('Bob')
     - 在set中，没有重复的key，重复元素自动被过滤。
     - 创建set，需要提供一个list作为输入集合。
     - 举例
-```
+```python
 s = set([1, 2, 3])
 #s = {1, 2, 3}
 s.add(4)
@@ -125,7 +122,7 @@ s.remove(4)
     - 数据类型转换：int、float、str、bool
 - 定义函数
     - 举例
-```
+```python
 # abstest.py
 # 导入函数form abstest import my_abs
 def my_abs(x):
@@ -135,7 +132,7 @@ def my_abs(x):
         return -x
     return None
 ``` 
-```
+```python
 # 空函数
 def nop():
     pass
@@ -160,7 +157,7 @@ def nop():
     - enumerate函数
 - 列表生成式
     - 符号[]，举例
-```
+```python
 list(range(0, 10))
 [ x*x for x in range(1, 10)]
 ```
