@@ -191,139 +191,139 @@ list(range(0, 10))
     - 排序，接收1-3个参数，分别是序列、key、reverse
 
 ### 返回函数
-    - 函数作为返回值。内部函数可以引用外部函数的参数和局部变量，相关参数和变量都保存在返回的内部函数，这种方式叫“闭包”
-    - 闭包，返回函数不要引用局部变量
+- 函数作为返回值。内部函数可以引用外部函数的参数和局部变量，相关参数和变量都保存在返回的内部函数，这种方式叫“闭包”
+- 闭包，返回函数不要引用局部变量
 
 ### 匿名函数
-    - 关键字lambda表示匿名函数，举例`lambda x : x * x`
-    - 只能有一个表达式，不用写return
-    - 匿名函数可以当参数和返回值
+- 关键字lambda表示匿名函数，举例`lambda x : x * x`
+- 只能有一个表达式，不用写return
+- 匿名函数可以当参数和返回值
 
 ### 装饰器
 ### 偏函数
-    - 在functools模块内，functools.partial
-    - 作用：把一个函数的某些参数固定（设置默认值），返回新函数
+- 在functools模块内，functools.partial
+- 作用：把一个函数的某些参数固定（设置默认值），返回新函数
 
 ## 模块
-一个py文件就是一个模块，一个含有__init__.py的目录是一个包
+- 一个py文件就是一个模块，一个含有__init__.py的目录是一个包
 
 ### 使用模块
-    - 作用域：`xxx`和`__xxx__`是公开的，`_xxx`和`__xxx`是非公开的
+- 作用域：`xxx`和`__xxx__`是公开的，`_xxx`和`__xxx`是非公开的
 
 ### 安装第三方模块
-    - pip
+- pip
 
 ## 面向对象编程
 数据封装、继承和多态
 
 ### 类和实例
-    - object：基类
-    - self：this指针，类内部使用属性也要用self修饰
-    - __init__：初始化函数
+- object：基类
+- self：this指针，类内部使用属性也要用self修饰
+- __init__：初始化函数
 
 ### 访问限制
-    - 类的属性名称前加双下划线__，就变成了私有变量，外部不能访问。但可以使用ClassInst._ClassName__AttrName来访问（可能不兼容）
-    - 特殊变量：形式为__xxx__，保留名称，公开的
+- 类的属性名称前加双下划线__，就变成了私有变量，外部不能访问。但可以使用ClassInst._ClassName__AttrName来访问（可能不兼容）
+- 特殊变量：形式为__xxx__，保留名称，公开的
 
 ### 继承和多态
-    - 子类获得父类的全部属性，为继承
-    - 子类可以覆盖父类的属性，为多态
-    - 开闭原则
-        - 对扩展开放：允许新增子类
-        - 对修改封闭：不需要修改依赖父类类型的函数
-    - 动态语言的鸭子类型：不要求严格的继承体系
+- 子类获得父类的全部属性，为继承
+- 子类可以覆盖父类的属性，为多态
+- 开闭原则
+	- 对扩展开放：允许新增子类
+	- 对修改封闭：不需要修改依赖父类类型的函数
+- 动态语言的鸭子类型：不要求严格的继承体系
 
 ### 获取对象信息
-    - type、isinstance、dir、getattr、setattr、hasattr
-    - len等函数实际调用的是类自己的__len__函数
+- type、isinstance、dir、getattr、setattr、hasattr
+- len等函数实际调用的是类自己的__len__函数
 
 ### 实例属性和类属性
-    - 实例属性会覆盖类属性
+- 实例属性会覆盖类属性
 
 ## 面向对象高级编程
-多重继承、定制类、元类等概念
+- 多重继承、定制类、元类等概念
 
 ### 使用__slots__
-    - 可以给类和实例动态绑定属性和方法
-    - __slots__可以限制实例的属性
+- 可以给类和实例动态绑定属性和方法
+- __slots__可以限制实例的属性
 
 ### 使用@property
 
 ### 多重继承
-    - 多重继承可以避免复杂的多层次的单继承链
+- 多重继承可以避免复杂的多层次的单继承链
 
 ### 定制类
-    - python的class允许定义很多定制方法，以生成特定的类
+- python的class允许定义很多定制方法，以生成特定的类
 
 ## 枚举类
-    - 使用`from enum import Enum`导入模块，枚举类成员具有value和name属性
+- 使用`from enum import Enum`导入模块，枚举类成员具有value和name属性
 
 ### 元类
 
 ## 错误、调试和测试
 
 ### 错误处理
-    - try...except...finally...机制
-    - 错误也是类
-    - 记录错误：logging模块
-    - raise抛出错误
+- try...except...finally...机制
+- 错误也是类
+- 记录错误：logging模块
+- raise抛出错误
 
 ### 调试
-    - print
-    - assert：可以控制关闭
-    - logging：允许指定记录信息的级别
-    - pdb：调试器
+- print
+- assert：可以控制关闭
+- logging：允许指定记录信息的级别
+- pdb：调试器
 
 ### 单元测试
-    - unittest模块
-    - setUp和tearDown
+- unittest模块
+- setUp和tearDown
 
 ### 文档测试
-    - doctest模块
+- doctest模块
 
 ## IO编程
-同步IO和异步IO。异步IO涉及到回调函数、轮询等概念
+- 同步IO和异步IO。异步IO涉及到回调函数、轮询等概念
 
 ### 文件读写
-    - IOError
-    - with语句open文件自动调用close函数
+- IOError
+- with语句open文件自动调用close函数
 
 ### StringIO和BytesIO
-    - file-like Object
+- file-like Object
 
 ### 操作文件和目录
-    - os模块，os.path和shutil模块
+- os模块，os.path和shutil模块
 
 ### 序列化
-    - pickle模块，把内存对象传输到硬盘或网络
-    - json模块，JSON编码是UTF-8
+- pickle模块，把内存对象传输到硬盘或网络
+- json模块，JSON编码是UTF-8
 
 ## 进程和线程
 
 ### 进程
-    - os.fork只能用在unix系的系统
-    - multiprocessing模块是跨平台的进程。Process、Pool
-    - 子进程：subprocess模块
-    - 进程间通信
+- os.fork只能用在unix系的系统
+- multiprocessing模块是跨平台的进程。Process、Pool
+- 子进程：subprocess模块
+- 进程间通信
 
 ### 线程
-    - _thread模块和threading模块。前者低级，后者高级
-    - 多线程需要上锁
-    - 由于python解释器的GIL全局锁，导致多线程无法利用多核，但多进程不受影响
+- _thread模块和threading模块。前者低级，后者高级
+- 多线程需要上锁
+- 由于python解释器的GIL全局锁，导致多线程无法利用多核，但多进程不受影响
 
 ### ThreadLocal
 
 ### 进程 vs线程
-    - 多进程不会互相影响，一个挂掉，别人没事
-    - 多线程互相影响，一个挂掉，全部都挂
-    - 计算密集型适合c等语言；IO密集型适合python等语言，比如web应用
-    - 异步IO：事件驱动模型，协程
+- 多进程不会互相影响，一个挂掉，别人没事
+- 多线程互相影响，一个挂掉，全部都挂
+- 计算密集型适合c等语言；IO密集型适合python等语言，比如web应用
+- 异步IO：事件驱动模型，协程
 
 ### 分布式进程
-    - managers模块
+- managers模块
 
 ## 正则表达式
-    - 基本匹配模式
-    - re模块：match、split、group、compile
+- 基本匹配模式
+- re模块：match、split、group、compile
 
 ## 常用內建模块
