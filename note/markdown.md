@@ -64,7 +64,7 @@
 |内容1|内容2|内容3|
 
 # 表情
-emoji表情:blush:，具体参考[emoji](http://www.emoji-cheat-sheet.com "官方网站，打开慢")或[其它]("https://github.com/bdxing/README/blob/master/emoji.md" "这个打开快一点")
+emoji表情:blush:，具体参考[emoji](http://www.emoji-cheat-sheet.com "官方网站，打开慢")或[其它](https://github.com/bdxing/README/blob/master/emoji.md "这个打开快一点")
 
 # 代码
 ```cpp
