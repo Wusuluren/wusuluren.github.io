@@ -12,3 +12,18 @@ title: Wusuluren的Blog
 		</li>
 	{% endfor %}
 </ul>
+
+<p id="greeting"></p>
+
+<script>
+var x = "";
+var time = new Date().getHours();
+if (time < 12) {
+	x = "早上好";
+} else if (time >= 12 && time < 18) {
+	x = "下午好";
+} else if (time >= 18) {
+	x = "晚上好";
+}
+document.getElementById("greeting").innerHTML = x;
+</script>
