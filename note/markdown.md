@@ -61,7 +61,7 @@
 |内容1|内容2|内容3|
 
 # 表情
-emoji表情:blush:
+emoji表情:blush:，具体参考[emoji](http://www.emoji-cheat-sheet.com)
 
 # 代码
 ```cpp
