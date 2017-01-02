@@ -36,7 +36,7 @@
 
 # 链接
 [百度](http://www.baidu.com "百度主页")
-[主页](/index.html "我的主页")
+[我的主页](http://wusuluren.github.io "我的主页")
 
 # 字体格式
 **粗体1**，__粗体2__<br>
@@ -48,7 +48,7 @@
 # 引用
 引用文本
 >Hello Github
-	--wusuluren
+--wusuluren
 
 多级引用
 >第一级
