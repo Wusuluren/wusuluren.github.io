@@ -1,5 +1,4 @@
 ---
-layout: default
 title: python
 category: note, markdown
 ---

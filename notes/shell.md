@@ -1,5 +1,4 @@
 ---
-layout: default
 title: shell
 category: note, markdown
 ---
