@@ -5,10 +5,23 @@ title: Wusuluren的Blog
 
 <h2 align="center">{{ page.title }}</h2>
 
+
+<p>笔记</p>
+<ul>
+		<li><a href="{{ site.baseurl }}/notes/shell.html">c</a></li>
+		<li><a href="{{ site.baseurl }}/notes/c++.html">c++</a></li>
+		<li><a href="{{ site.baseurl }}/notes/go.html">go</a></li>
+		<li><a href="{{ site.baseurl }}/notes/python.html">python</a></li>
+		<li><a href="{{ site.baseurl }}/notes/shell.html">shell</a></li>
+		<li><a href="{{ site.baseurl }}/notes/javascript.html">javascript</a></li>
+		<li><a href="{{ site.baseurl }}/notes/markdown.html">markdown</a></li>
+</ul>
+
 <p>最新文章</p>
 <ul>
 	{% for post in site.posts %}
-		<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>&nbsp; {{ post.date | date_to_string }}
+		<li>
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>&nbsp; {{ post.date | date_to_string }}
 		</li>
 	{% endfor %}
 </ul>

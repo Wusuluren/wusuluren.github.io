@@ -1,3 +1,9 @@
+---
+layout: default
+title: python
+category: note, markdown
+---
+
 ## 数据类型
 - 整数
     - 没有大小限制

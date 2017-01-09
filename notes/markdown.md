@@ -1,3 +1,9 @@
+---
+layout: default
+title: markdown
+category: note, markdown
+---
+
 # Github的Markdown语法
 ====================
 
