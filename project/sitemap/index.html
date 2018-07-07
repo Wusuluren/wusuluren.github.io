@@ -1,0 +1,75 @@
+---
+title: 网址导航
+layout: default
+---
+
+<div class="container">
+    <div class="row">
+        <h2 align="center">{{ page.title }}</h2>
+    </div> 
+    <div id="sitemap" class="row">
+    </div>
+</div>
+
+<script>
+    var websites = [
+        {
+            "id": "search",
+            "name": "搜索",
+            "urls": [
+                {
+                    "id": "baidu",
+                    "name": "百度",
+                    "url": "https://www.baidu.com"
+                },
+                {
+                    "id": "google",
+                    "name": "谷歌",
+                    "url": "https://google.com"
+                },
+                {
+                    "id": "bing",
+                    "name": "必应",
+                    "url": "https://bing.com"
+                },
+                {
+                    "id": "google.uulucky",
+                    "name": "谷歌镜像",
+                    "url": "https://google.uulucky.com"
+                }
+            ]
+        },
+        {
+            "id": "community",
+            "name": "社区",
+            "urls": [
+                {
+                    "id": "github",
+                    "name": "Github",
+                    "url": "https://github.com"
+                },
+                {
+                    "id": "github-trending",
+                    "name": "Github趋势",
+                    "url": "https://github.com/trending"
+                },
+                {
+                    "id": "zhihu",
+                    "name": "知乎",
+                    "url": "https://www.知乎.com"
+                }
+            ]
+        }
+    ]
+
+    $(function() {
+        for(let bank of websites) {
+            console.log(bank)
+            $('#sitemap').append(`<div id="${bank.id}" class="list-group"><a class="list-group-item active" href="#"><h2>${bank.name}</h2></a></div>`)
+            for(let website of bank.urls) {
+                $(`#${bank.id}.list-group`).append(`<a class="list-group-item" href="${website.url}"><div class="row"><h4 class="list-group-item-heading">${website.name}</h4></div></a>`)
+            } 
+        }
+    })
+</script>
+
