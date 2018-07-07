@@ -8,7 +8,9 @@ title: 重新整理Pages
         <h2 align="center">{{ page.title }}</h2>
         <p>留个纪念，重新整理Pages，以期留下什么。</p>
     </div>
-    <div class="navbar-fixed-bottom text-right">
-        <p>{{ page.date | date_to_string }}</p>
+    <div class="row">
+        <div class="navbar-bottom">
+            {% include gitment.html %}
+        </div>
     </div>
 </div>
