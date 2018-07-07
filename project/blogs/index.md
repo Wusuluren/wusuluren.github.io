@@ -1,0 +1,17 @@
+---
+title: 写点东西
+layout: default
+category: markdown
+---
+
+<div class="container">
+    <div class="row">
+        <div class="list-group">
+            <a class="list-group-item active" href="#"><h2>最新文章</h2></a>
+            {% for post in site.posts %}
+                <a class="list-group-item" href="{{ site.baseurl }}{{ post.url }}"><div class="row"><h4 class="list-group-item-heading">{{ post.title }}</h4><h4 class="list-group-item-text text-right">{{ post.date | date_to_string }}</h4></div></a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+

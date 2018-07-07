@@ -1,0 +1,26 @@
+---
+layout: default
+title: Markdown解释器
+---
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" style="text-align:center">
+            <p class="navbar-text"><h2>原始文本</h2></p>
+        </div>
+    </nav>
+    <div class="row">
+        <textarea id="textarea" class="form-control" style="resize:none"></textarea>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" style="text-align:center">
+            <p class="navbar-text"><h2>Markdown文本</h2></p>
+        </div>
+    </nav>
+    <div class="row">
+        <iframe id="markdown-iframe" class="form-control"></iframe>
+    </div>
+</div>
+<script src="/static/js/markdown/markdown.js"></script>

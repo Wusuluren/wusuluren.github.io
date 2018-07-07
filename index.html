@@ -1,46 +1,57 @@
 ---
 layout: default
-title: Wusuluren的Blog
+title: hwave的实验室
 ---
 
-<h2 align="center">{{ page.title }}</h2>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid" style="text-align:center">
+			<p class="navbar-text"><h2>{{ page.title }}</h2></p>
+		</div>
+	</nav>
 
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"  style="padding:20px 20px">
+			<button type="button" class="btn btn-link btn-block"><a href="{{ site.baseurl }}/project/snake/index.html">贪吃蛇</a></button>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"  style="padding:20px 20px">
+			<button type="button" class="btn btn-link btn-block"><a href="{{ site.baseurl }}/project/markdown/index.html">Markdown解释器</a></button>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"  style="padding:20px 20px">
+			<button type="button" class="btn btn-link btn-block"><a href="{{ site.baseurl }}/project/markdown/index.html">hwave的记事本</a></button>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"  style="padding:20px 20px">
+			<button type="button" class="btn btn-link btn-block"><a href="{{ site.baseurl }}/project/mlmnist/index.html">手写数字识别</a></button>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"  style="padding:20px 20px">
+			<button type="button" class="btn btn-link btn-block"><a href="{{ site.baseurl }}/project/flower/index.html">情人节礼物</a></button>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"  style="padding:20px 20px">
+				<button type="button" class="btn btn-link btn-block"><a href="{{ site.baseurl }}/project/notes/index.html">学习笔记</a></button>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"  style="padding:20px 20px">
+				<button type="button" class="btn btn-link btn-block"><a href="{{ site.baseurl }}/project/blogs/index.html">写点东西</a></button>
+		</div>
+	</div>
+</div>
 
-<p>笔记</p>
-<ul>
-		<li><a href="{{ site.baseurl }}/notes/shell.html">c</a></li>
-		<li><a href="{{ site.baseurl }}/notes/c++.html">c++</a></li>
-		<li><a href="{{ site.baseurl }}/notes/go.html">go</a></li>
-		<li><a href="{{ site.baseurl }}/notes/python.html">python</a></li>
-		<li><a href="{{ site.baseurl }}/notes/shell.html">shell</a></li>
-		<li><a href="{{ site.baseurl }}/notes/javascript.html">javascript</a></li>
-		<li><a href="{{ site.baseurl }}/notes/markdown.html">markdown</a></li>
-</ul>
+<div class="navbar-fixed-bottom text-right">
+<a href="https://github.com/Wusuluren/wusuluren.github.io"><img src="https://assets-cdn.github.com/favicon.ico" alt=""></a>
+</div>
 
-<p>最新文章</p>
-<ul>
-	{% for post in site.posts %}
-		<li>
-			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>&nbsp; {{ post.date | date_to_string }}
-		</li>
-	{% endfor %}
-</ul>
+<!-- <script>
+	var dates = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")
+	var dateIdx = new Date().getDay();
+	var greets = new Array("早上好", "下午好", "晚上好")
 
-<p id="greeting"></p>
-
-<script>
-var dates = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")
-var dateIdx = new Date().getDay();
-var greets = new Array("早上好", "下午好", "晚上好")
-
-var time = new Date().getHours();
-var timeIdx = 0;
-if (time < 12) {
-	timeIdx = 0;
-} else if (time >= 12 && time < 18) {
-	timeIdx = 1;
-} else if (time >= 18) {
-	timeIdx = 2;
-}
-document.getElementById("greeting").innerHTML = greets[timeIdx]+",今天是"+dates[dateIdx]
-</script>
+	var time = new Date().getHours();
+	var timeIdx = 0;
+	if (time < 12) {
+		timeIdx = 0;
+	} else if (time >= 12 && time < 18) {
+		timeIdx = 1;
+	} else if (time >= 18) {
+		timeIdx = 2;
+	}
+	document.getElementById("greeting").innerHTML = greets[timeIdx]+",今天是"+dates[dateIdx]
+</script> -->
