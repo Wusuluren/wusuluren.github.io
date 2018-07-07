@@ -1,6 +1,6 @@
 ---
 title: python
-layout: default
+layout: default-blog-md
 category: markdown
 ---
 

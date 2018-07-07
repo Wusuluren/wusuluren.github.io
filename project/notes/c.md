@@ -1,5 +1,5 @@
 ---
 title: c
-layout: default
+layout: default-blog-md
 category: markdown
 ---

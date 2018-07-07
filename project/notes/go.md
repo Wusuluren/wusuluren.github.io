@@ -1,5 +1,5 @@
 ---
 title: go
-layout: default
+layout: default-blog-md
 category: markdown
 ---

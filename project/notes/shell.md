@@ -1,6 +1,6 @@
 ---
 title: shell
-layout: default
+layout: default-blog-md
 category: markdown
 ---
 
