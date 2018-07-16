@@ -1,0 +1,40 @@
+---
+layout: default
+title: Markdown解释器
+---
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 container">
+    <div class="row">
+        <input type="text" placeholder="文件名">
+        <button onclick='download()'>下载</button>
+        <button onclick='preview()'>预览</button>
+    </div>
+    <div class="row" id="raw-panel">
+        <textarea id="textarea" class="form-control" style="resize:none"></textarea>
+    </div>
+    <div class="row" id="preview-panel" style="visibility: hidden">
+        <iframe id="markdown-iframe" class="form-control"></iframe>
+    </div>
+</div>
+
+<script src="/static/js/markdown/markdown.js"></script>
+<script src="{{ site.baseurl }}/static/js/writer/FileSaver.js"></script>
+<script>
+    download = function() {
+        var content = $('#textarea').val()
+        content = content.replace(/\n/g, '\r\n')
+        var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+        FileSaver.saveAs(blob, "hello world.txt");
+    }
+    var enable_preview = false
+    preview = function() {
+        enable_preview = !enable_preview
+        if(enable_preview) {
+            document.getElementById('preview-panel').style.visibility='visible'
+        } else {
+            document.getElementById('preview-panel').style.visibility='hidden'
+        }
+    }
+    window.onload = function() {
+    }
+</script>

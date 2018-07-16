@@ -23,4 +23,68 @@ title: Markdown解释器
         <iframe id="markdown-iframe" class="form-control"></iframe>
     </div>
 </div>
+
 <script src="/static/js/markdown/markdown.js"></script>
+<script>
+        var hasInput = false
+        var textarea
+        var markdown_iframe
+        var mdEngine = new Engine('')
+        var dealWithInput = function() {
+            if (hasInput) {
+                hasInput = false
+                var text = textarea.value
+                mdEngine.Input(text)
+                mdEngine.Preprocess()
+                mdEngine.Process()
+                var output = mdEngine.Output()
+                // console.log(output)
+                markdown_iframe.srcdoc = output
+            }
+        }
+        var text = `
+大标题<br>
+======<br>
+小标题<br>
+---<br>
+# 一级标题<br>
+###### 六级标题<br>
+普通文本<br>
+*斜体*<br>
+**粗体**<br>
+ <br>
+-----<br>
+ <br>
+![图片](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=538188260,366145546&fm=58&u_exp_0=4266121941,32840136&fm_exp_0=86&bpow=512&bpoh=512)<br>
+链接[百度](http://www.baidu.com)<br>
+- 无序列表<br>
+    - 嵌套<br>
+* 无序列表2<br>
+1. 有序列表<br>
+2. 有序列表2<br>
+1. 有序列表3<br>
+`
+    var output
+
+    $(function(){
+        textarea = document.getElementById('textarea')
+        markdown_iframe = document.getElementById('markdown-iframe')
+        markdown_iframe.style.height = (window.innerHeight).toString() + "px"
+        markdown_iframe.style.width = (window.innerWidth / 2).toString() + "px"
+        textarea.style.height = (window.innerHeight).toString() + "px"
+        textarea.style.width = (window.innerWidth / 2).toString() + "px"
+        textarea.oninput = function () { 
+            hasInput = true
+            // console.log(this.innerHTML) 
+        }
+        text = text.replace(/<br>/g, '')
+        mdEngine.Input(text)
+        mdEngine.Preprocess()
+        mdEngine.Process()
+        output = mdEngine.Output()
+        textarea.value = text
+        markdown_iframe.srcdoc = output
+        // console.log(output)
+        window.setInterval(dealWithInput, 100)
+    })
+</script>
