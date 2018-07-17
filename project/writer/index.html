@@ -1,19 +1,26 @@
 ---
 layout: default
-title: Markdown解释器
+title: 在线编辑器
 ---
 
+<nav class="navbar navbar-default">
+    <input type="text" placeholder="文件名">
+    <select onchange="changeFileType(this.options[this.options.selectedIndex].text)">
+        <option value="txt">txt</option>
+        <option value="markdown">md</option>
+    </select>
+    <button onclick='download()'>下载</button>
+    <button onclick='preview()'>预览</button>
+</nav>
+    
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 container">
-    <div class="row">
-        <input type="text" placeholder="文件名">
-        <button onclick='download()'>下载</button>
-        <button onclick='preview()'>预览</button>
-    </div>
-    <div class="row" id="raw-panel">
-        <textarea id="textarea" class="form-control" style="resize:none"></textarea>
-    </div>
-    <div class="row" id="preview-panel" style="visibility: hidden">
-        <iframe id="markdown-iframe" class="form-control"></iframe>
+    <div class="form-group">
+        <div class="col-md-6"  id="write-panel" style="resize: none">
+            <textarea id="textarea" class="form-control" ></textarea>
+        </div>
+        <div class="col-md-6" id="preview-panel" style="visibility: hidden">
+            <iframe id="markdown-iframe" class="form-control"></iframe>
+        </div>
     </div>
 </div>
 
@@ -26,15 +33,74 @@ title: Markdown解释器
         var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
         FileSaver.saveAs(blob, "hello world.txt");
     }
+
+    var fileType = "txt"
+    changeFileType = function(type) {
+        fileType = type
+        console.log(fileType)
+    }
+
     var enable_preview = false
     preview = function() {
         enable_preview = !enable_preview
+        var preview_panel = document.getElementById('preview-panel')
+        markdown_iframe = document.getElementById('markdown-iframe')
+        textarea = document.getElementById('textarea')
         if(enable_preview) {
-            document.getElementById('preview-panel').style.visibility='visible'
+            preview_panel.style.visibility = 'visible'
+            preview_panel.style.left = (window.outerHeight/2).toString() + "px"
+
+            var height = (window.innerHeight).toString() + "px"
+            var width =  (window.innerWidth / 2).toString() + "px"
+            markdown_iframe.style.height = height
+            markdown_iframe.style.width = width
+            textarea.style.height = height
+            textarea.style.width = width
         } else {
-            document.getElementById('preview-panel').style.visibility='hidden'
+            preview_panel.style.visibility = 'hidden'
+
+            var height = (window.innerHeight).toString() + "px"
+            var width =  (window.innerWidth).toString() + "px"
+            markdown_iframe.style.height = 0
+            markdown_iframe.style.width = 0
+            textarea.style.height = height
+            textarea.style.width = width
         }
     }
+
+    var hasInput = false
+        var textarea
+        var markdown_iframe
+        var mdEngine = new Engine('')
+        var dealWithInput = function() {
+            if (hasInput) {
+                hasInput = false
+                var text = textarea.value
+                mdEngine.Input(text)
+                mdEngine.Preprocess()
+                mdEngine.Process()
+                var output = mdEngine.Output()
+                markdown_iframe.srcdoc = output
+            }
+        }
     window.onload = function() {
+        var text = "write anything"
+        textarea = document.getElementById('textarea')
+        markdown_iframe = document.getElementById('markdown-iframe')
+        markdown_iframe.style.height = 0
+        markdown_iframe.style.width = 0
+        textarea.style.height = (window.innerHeight).toString() + "px"
+        textarea.style.width = (window.innerWidth).toString() + "px"
+        textarea.oninput = function () { 
+            hasInput = true
+        }
+        text = text.replace(/<br>/g, '')
+        mdEngine.Input(text)
+        mdEngine.Preprocess()
+        mdEngine.Process()
+        output = mdEngine.Output()
+        textarea.value = text
+        markdown_iframe.srcdoc = output
+        window.setInterval(dealWithInput, 100)
     }
 </script>
