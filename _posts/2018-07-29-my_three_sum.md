@@ -15,7 +15,6 @@ func calcThreeSum(array []int) {
 	for i, item := range array {
 		thirdReversed[-item] = i
 	}
-	calcedTwo := make(map[int]bool)
 	calcedThree := make(map[int]bool)
 	for i := range array {
 		for j := range array {
@@ -23,16 +22,12 @@ func calcThreeSum(array []int) {
 				continue
 			}
 			firstTwo := array[i] + array[j]
-			if _, ok := calcedTwo[firstTwo]; ok {
-				continue
-			}
 			if idx, ok := thirdReversed[firstTwo]; ok {
 				if _, ok := calcedThree[i+j+idx]; !ok {
 					fmt.Println( fmt.Sprintf("%d[%d], %d[%d], %d[%d]", array[i], i, array[j], j, -firstTwo, idx))
 					calcedThree[i+j+idx] = true
 				}
 			}
-			calcedTwo[firstTwo] = true
 		}
 	}
 }
@@ -47,6 +42,5 @@ func main() {
 		calcThreeSum(data)
 	}
 }
-
 ``` 
 运行地址点[这里](http://tpcg.io/hu1kuX)。
