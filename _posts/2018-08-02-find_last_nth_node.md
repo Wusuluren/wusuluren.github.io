@@ -7,7 +7,7 @@ category: markdown
 如何找到链表里的倒数第N个节点？  
 提供两种办法，办法一：
 ```go
-// 双指针法：构造两个距离为N的指针，同时遍历遍历链表。
+// 双指针法：构造两个距离为N的指针，同时遍历链表。
 // 当后一个指针到达末尾时，前一个指针就是倒数第N个节点。
 func findLastNthNode(linklist *Node, nth int) *Node {
 	var n1, n2 *Node
