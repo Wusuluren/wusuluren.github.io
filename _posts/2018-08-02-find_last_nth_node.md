@@ -42,10 +42,12 @@ func findLastNthNode2(linklist *Node, nth int) *Node {
 			n2 = n2.next
 		}
 		if i < nth {
-			for j := 0; j < i; j++ {
-				n1 = n1.next
-			}
-			return n1
+		    if !firstNth {
+    			for j := 0; j < i; j++ {
+    				n1 = n1.next
+    			}
+		    }
+    		return n1
 		} else {
 			if firstNth {
 				firstNth = false
@@ -95,5 +97,4 @@ func main() {
 	fmt.Println(findLastNthNode2(head, 2).value)
 }
 ``` 
-运行地址点[这里](http://tpcg.io/UwsHZz
-)。
+运行地址点[这里](http://tpcg.io/itlqQC)。
