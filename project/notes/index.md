@@ -16,5 +16,9 @@ category: markdown
             <a class="list-group-item" href="{{ site.baseurl }}/project/notes/javascript.html"><h4 class="list-group-item-heading">javascript</h4></a>
             <a class="list-group-item" href="{{ site.baseurl }}/project/notes/markdown.html"><h4 class="list-group-item-heading">markdown</h4></a>
         </div>
+        <div class="list-group">
+            <a class="list-group-item active" href="#"><h2>书籍资料</h2></a>
+            <a class="list-group-item" href="{{ site.baseurl }}/project/notes/jingtongjiaobenheike.html"><h4 class="list-group-item-heading">精通脚本黑客</h4></a>
+        </div>
     </div>
 </div>
