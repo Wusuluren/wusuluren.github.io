@@ -33,4 +33,4 @@ cliAutoColorful函数类型，不过会对last_cmd的首字母进行判断，来
   --color  		  Use colorful formatting for replies print.
 ```
 在命令行输入`./redis-cli --color --pretty`，就可以使用新的redis-cli程序，效果如下图所示：  
-<img src="{{ site.baseurl }}/static/image/2018-08-19/myredis-cli.png">    
+<img src="{{ site.baseurl }}/static/image/2018-08-19/myredis-cli.PNG">    
