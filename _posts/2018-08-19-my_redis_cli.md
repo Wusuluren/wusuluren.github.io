@@ -37,4 +37,4 @@ cliAutoColorful函数类型，不过会对last_cmd的首字母进行判断，来
 
 Update:  
 增加了新的命令行选项：--json，可以以json的格式输出。   
-<img src="{{ site.baseurl }}/static/image/2018-08-19/myredis-cli-json.PNG">   
+<img src="{{ site.baseurl }}/static/image/2018-08-19/myredis-cli-json.png">   
