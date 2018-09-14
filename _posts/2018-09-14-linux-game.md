@@ -1,5 +1,5 @@
 ---
-layout: default-blog-md
+layout: default-blog
 title: linux下的小游戏
 category: markdown
 ---
