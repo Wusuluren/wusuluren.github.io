@@ -38,3 +38,7 @@ cliAutoColorful函数类型，不过会对last_cmd的首字母进行判断，来
 Update:  
 增加了新的命令行选项：--json，可以以json的格式输出。   
 <img src="{{ site.baseurl }}/static/image/2018-08-19/myredis-cli-json.png">   
+
+Update:  
+使用上下键查找历史命令时，会根据当前输入进行前缀匹配，就像zsh那样。   
+<img src="{{ site.baseurl }}/static/image/2018-08-19/myredis-cli-history.gif">   
