@@ -18,7 +18,7 @@ func HandleFunc(pattern string, handler func(ResponseWriter, *Request)) {
 	DefaultServeMux.HandleFunc(pattern, handler)
 }
 ```
-这个函数里使用了`DefaultServeMux`这个标准看内置的路由结构变量，其定义如下：  
+这个函数里使用了`DefaultServeMux`这个标准库内置的路由结构变量，其定义如下：  
 ```go
 type ServeMux struct {
 	mu    sync.RWMutex
